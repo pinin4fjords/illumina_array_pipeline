@@ -17,7 +17,7 @@
 .PHONY: all
 all: split_anno read_lumi preprocess_lumi extract_matrices run_limma run_roast make_shiny_object 
 
-ROOT_DIR			:= /home/jmanning/fast/MedineCkit
+ROOT_DIR			:= /my/root/dir
 ANALYSIS_DIR			:= $(ROOT_DIR)/analysis
 OUT_DIR				:= $(ANALYSIS_DIR)/pipeline
 
