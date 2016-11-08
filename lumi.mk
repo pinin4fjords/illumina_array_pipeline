@@ -141,8 +141,6 @@ run_roast: $(GENE_SET_RESULTS)
 $(GENE_SET_RESULTS): $(PROCESSED_ESET) $(ANNOTATION_DIR)/probe.csv $(DIFFEXP_FILES)
 	mkdir -p $(dir $@) && Rscript $(ROAST_SCRIPT) $< $(EXPERIMENT) $(CONTRASTS) $(word 2,$^) $(BIOMART_ENTREZ_GENE) $(BIOMART_ID_FIELD) $(ROAST_NROT) $(THREADS) $(MSIGDB_DIR) $@ $(BATCH_VARIABLE) 
 
-#> $(subst .csv,.log,$@) 2>&1
-
 # Make an object to use in a shiny
 
 .PHONY: make_shiny_object
