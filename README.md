@@ -2,11 +2,29 @@
 
 This is a simple pipeline for analysing Illumina array data, using the Lumi [1] and Limma [2] packages of Bioconductor. To use it, edit the indicated variables at the top of the lumi.mk makefile, and execute it with 'make -f lumi.mk'. A directory called 'pipeline' will be created and will contain the outputs.
 
+# Inputs
+
 This is not a bead-level analysis, it assumes you have the following:
 
 * Sample probe profile, control probe profile and samples table, all usually exported from BeadStudio.
 * An illumina annotation file, e.g. "HumanHT-12_V4_0_R2_15002873_B.txt" 
+* A tab-delimted experiment file describing your samples and with rows matching columns of the input data.
+* A tab-delimited file defining contrasts.
+* A set of .gmt format gene set files for differential gene set analysis. 
 
+## Experiment file
+
+The experiment file is tab-delimited without a column name for sample IDs, like:
+
+```
+age	gender
+Sample1	25	M
+Sample2	30	F
+Sample3 22	F
+Sample4 12	M
+Sample5	50	M
+Sample6	70	F
+```
 
 
 # References
