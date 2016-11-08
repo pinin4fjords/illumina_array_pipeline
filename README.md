@@ -43,7 +43,7 @@ lumi.mk is a makefile which can be used to run this pipeline. It is executed lik
 make -f lumi.mk <TARGET>
 ```
 
-Where <TARGET> represents a given target in the makefile. 
+Where `<TARGET>` represents a given target in the makefile. 
 
 You can see what the makefile will do before actually running it with:
 
