@@ -37,7 +37,20 @@ gender	F	M
 
 # Analysis
 
-Makefile targtets are:
+lumi.mk is a makefile which can be used to run this pipeline. It is executed like:
+
+```
+make -f lumi.mk <TARGET>
+```
+
+Where <TARGET> represents a given target in the makefile. 
+
+You can see what the makefile will do before actually running it with:
+
+```
+make -n -f lumi.mk <TARGET>
+```
+Makefile targets are:
 
 ## all
 
