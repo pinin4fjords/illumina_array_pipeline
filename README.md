@@ -26,6 +26,56 @@ Sample5	50	M
 Sample6	70	F
 ```
 
+## Contrasts file
+
+The contrasts file defines contrasts in terms of the variables found in the experiment, like:
+
+```
+variable	group1	group2
+gender	F	M
+```
+
+# Analysis
+
+Makefile targtets are:
+
+## all
+
+Run all of the following. The default.
+
+## split_anno
+
+Split the Illumina annotation file into main- and control- probes
+
+## read_lumi
+
+Run readIllumina.R to Make a valid lumiBatch object from the inputs (will be serialised to .RDS)
+
+## preprocess_lumi 
+
+Run lumiExpresso.R to Call lumiExpresso() to perform background correction, normalisation and variance stabilisation (check for LUMI parameters in the makefile to tweak options). 
+
+## extract_matrices
+
+Use extractMatrix.R to derive csv-formatted matrices we can use later for exploratory purposes.
+
+## run_limma
+
+Run arrayLimma.R to look at the specified contrasts using limma and produce matrices of uncorrected and corrected p values.
+
+## run_roast
+
+Employ limma's mroast() method to perform differential gene set analysis.
+
+## make_shiny_object
+
+Using makeShiny.R, take the text-format outputs and make a data structure for use with [shinyngs](https://github.com/pinin4fjords/shinyngs). This will be serialised to data.rds, and can the be loaded for visualisation:
+
+```R
+eselist <- readRDS('data.rds')
+app <- prepareApp('illuminaaarray', eselist)
+shiny::shinyApp(ui = app$ui, server = app$server)
+```
 
 # References
 

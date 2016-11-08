@@ -32,6 +32,7 @@ SAMPLE_PROBE_PROFILE 		:= $(DATA_DIR)/<SAMPLE PROBE PROFILE HERE>
 CONTROL_PROBE_PROFILE		:= $(DATA_DIR)/<CONTROL PROBE PROFILE HERE>
 SAMPLES_TABLE			:= $(DATA_DIR)/<SAMPLES TABLE>
 MSIGDB_DIR			:= <DIRECTORY WITH .gmt FILES FROM MSIGDB OR SIMILAR>
+SPECIES				:= <DEFINE AN ENSEMBL-TYPE SPECIES, e.g. hsapiens>
 THREADS				:= 8
 
 # Illumina's probe annotation for control probes etc
@@ -72,7 +73,6 @@ LIMMA_SCRIPT			:= arrayLimma.R
 ANNOTATION_DIR			:= $(OUT_DIR)/annotation
 ANNOTATION_FILES		:= $(ANNOTATION_DIR)/probe.csv $(ANNOTATION_DIR)/control.csv
 ANNOTATION_SCRIPT		:= getAnnotation.R
-SPECIES				:= hsapiens
 BIOMART_ID_FIELD		:= illumina_humanht_12_v4
 BIOMART_ENTREZ_GENE		:= entrezgene
 BIOMART_SYMBOL			:= external_gene_name
